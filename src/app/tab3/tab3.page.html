@@ -1,17 +1,44 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>Operaciones</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="number" placeholder="Ingrese el primer valor" [(ngModel)]="n1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Ingrese el segundo valor" [(ngModel)]="n2"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="op">
+      <ion-list-header>
+        <ion-label>Operaciones</ion-label>        
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Suma</ion-label>
+        <ion-radio checked="true" [value]="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Resta</ion-label>
+        <ion-radio [value]="2"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Multiplicacion</ion-label>
+        <ion-radio [value]="3"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Division</ion-label>
+        <ion-radio [value]="4"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <span style="color: red; font-weight: bold">{{resultado}}</span>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="primary" (click)="Calcular()">Calcular</ion-button>
 </ion-content>

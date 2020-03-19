@@ -1,17 +1,22 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Suma
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input type="number" placeholder="Ingrese su primer numero" [(ngModel)]="n1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Ingrese su segundo numero" [(ngModel)]="n2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" color="primary" readonly [(ngModel)]="total"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="primary" (click)="Suma()">Sumar</ion-button>
 </ion-content>
